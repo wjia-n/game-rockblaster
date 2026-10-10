@@ -34,19 +34,12 @@ class _ProScreenState extends State<ProScreen> {
 
   Future<void> _init() async {
     await _store.init();
-    _store.proPurchased.addListener(_onPro);
     if (mounted) setState(() => _loading = false);
   }
 
-  void _onPro() {
-    if (_store.proPurchased.value) {
-      widget.settings.setPro(true);
-    }
-  }
-
+  
   @override
   void dispose() {
-    _store.proPurchased.removeListener(_onPro);
     _store.dispose();
     super.dispose();
   }

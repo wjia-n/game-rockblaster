@@ -79,7 +79,7 @@ class BlastSettings extends ChangeNotifier {
   int gamesPlayed = 0;
   int rocksSmashed = 0;
   int wavesCleared = 0;
-  bool isPro = false;
+  bool isPro = true; // everything unlocked — no Pro version
 
   /// Custom theme colors (ARGB ints). Defaults mirror Midnight Harbor.
   Map<String, int> customColors = Map.of(_defaultCustomColors);
@@ -116,7 +116,7 @@ class BlastSettings extends ChangeNotifier {
     gamesPlayed = p.getInt(_kGames) ?? 0;
     rocksSmashed = p.getInt(_kRocks) ?? 0;
     wavesCleared = p.getInt(_kWaves) ?? 0;
-    isPro = p.getBool(_kIsPro) ?? false;
+    isPro = true; // everything unlocked
     for (final k in _defaultCustomColors.keys) {
       customColors[k] =
           p.getInt('$_kCustomPrefix$k') ?? _defaultCustomColors[k]!;
