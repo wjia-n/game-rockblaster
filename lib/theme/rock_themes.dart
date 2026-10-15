@@ -125,7 +125,7 @@ class RockThemes {
     ),
     RockThemeDef(
       id: 'arctic',
-      name: 'Arctic Night',
+      name: 'Frozen Night',
       bg: Color(0xFF101820),
       panel: Color(0xFF1B2530),
       star: Color(0xFFDCE8F2),
