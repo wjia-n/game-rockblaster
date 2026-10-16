@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
 import '../theme/rock_themes.dart';
+import '../transfer/transfer_ui.dart';
 
 /// Settings: audio toggles + volume, pilot name, and app info.
 class SettingsScreen extends StatelessWidget {
@@ -34,6 +35,7 @@ class SettingsScreen extends StatelessWidget {
           body: ListView(
             padding: const EdgeInsets.fromLTRB(20, 8, 20, 28),
             children: [
+              TransferSaveTile(gameSlug: 'rockblaster'),
               _label('AUDIO', t),
               const SizedBox(height: 8),
               _toggle(
