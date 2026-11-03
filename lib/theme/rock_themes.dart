@@ -267,6 +267,13 @@ class BlastDifficulties {
     'Faster rocks, more of them. UFOs shoot back.',
     'Relentless. PRO only. Prove yourself.',
   ];
+  // iOS variant: same descriptions without the PRO tag (Android keeps the
+  // original).
+  static const descriptionsIos = [
+    'Slow rocks, gentle UFOs. Learn the ropes.',
+    'Faster rocks, more of them. UFOs shoot back.',
+    'Relentless. Prove yourself.',
+  ];
 
   /// Ace (index 2) needs Pro.
   static bool isPro(int i) => i >= 2;

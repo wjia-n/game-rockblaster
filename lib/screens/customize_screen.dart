@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../render/ship_art.dart';
 import '../services/audio_service.dart';
@@ -232,7 +233,11 @@ class CustomizeScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                _label('COLOR CREATOR  🔒 PRO', t),
+                _label(
+                    defaultTargetPlatform == TargetPlatform.iOS
+                        ? 'COLOR CREATOR  🔒'
+                        : 'COLOR CREATOR  🔒 PRO',
+                    t),
                 const SizedBox(height: 8),
                 if (!s.isPro)
                   GestureDetector(

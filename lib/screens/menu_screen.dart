@@ -197,7 +197,10 @@ class _MenuScreenState extends State<MenuScreen> {
                         padding: const EdgeInsets.only(bottom: 8),
                         child: _ChoiceCard(
                           title: BlastDifficulties.names[i],
-                          subtitle: BlastDifficulties.descriptions[i],
+                          subtitle: (defaultTargetPlatform ==
+                                      TargetPlatform.iOS
+                                  ? BlastDifficulties.descriptionsIos
+                                  : BlastDifficulties.descriptions)[i],
                           selected: s.difficulty == i,
                           locked:
                               BlastDifficulties.isPro(i) && !s.isPro,
