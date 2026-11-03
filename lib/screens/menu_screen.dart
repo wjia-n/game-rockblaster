@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../services/audio_service.dart';
 import '../services/settings_service.dart';
@@ -116,7 +117,7 @@ class _MenuScreenState extends State<MenuScreen> {
                             color: t.accent,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Text('PRO',
+                          child: Text(defaultTargetPlatform == TargetPlatform.iOS ? '⭐' : 'PRO',
                               style: TextStyle(
                                   fontWeight: FontWeight.w900,
                                   color: Color(0xFF1A1008))),
@@ -260,9 +261,11 @@ class _MenuScreenState extends State<MenuScreen> {
                     onPressed: () => _open(
                         ProScreen(audio: widget.audio, settings: s)),
                     child: Text(
-                        s.isPro
-                            ? '⭐ You are PRO — thank you!'
-                            : '⭐ Go Pro — unlock everything',
+                        defaultTargetPlatform == TargetPlatform.iOS
+                            ? '⭐ Gold Star'
+                            : (s.isPro
+                                ? '⭐ You are PRO — thank you!'
+                                : '⭐ Go Pro — unlock everything'),
                         style: TextStyle(
                             color: t.accent,
                             fontWeight: FontWeight.w700)),
